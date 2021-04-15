@@ -1,0 +1,20 @@
+section {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: 1fr 1fr;
+    width: 75vw;
+}
+
+.card-body {
+    display: grid;
+    place-items: center;
+}
+
+.location-icon {
+    width: 75%;
+    margin-bottom: 20px;
+}
+
+.card {
+    margin: 0 auto;
+}

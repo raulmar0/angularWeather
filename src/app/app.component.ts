@@ -2,9 +2,14 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'fr-root',
-  templateUrl: './app.component.html',
+  template: `
+    <div>
+      <h1>{{title}}</h1>
+      <fr-locations></fr-locations>
+    </div>
+   `,
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'firstReview';
+  title = 'Components, one way data binding and directives';
 }
