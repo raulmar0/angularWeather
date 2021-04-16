@@ -33,5 +33,17 @@ export class LocationsComponent {
             "min": 0,
             "max": 3
         },
+        {
+            "city": "Madrid",
+            "icon": "../assets/svg/002-rain.svg",
+            "min": 22,
+            "max": 24
+        },
+        {
+            "city": "Lyon",
+            "icon": "../assets/svg/004-snowflake.svg",
+            "min": 0,
+            "max": 3
+        },
     ]
 }

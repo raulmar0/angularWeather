@@ -2,7 +2,7 @@ section {
     display: grid;
     gap: 1rem;
     grid-template-columns: 1fr 1fr;
-    width: 75vw;
+    max-width: 540px;
 }
 
 .card-body {
@@ -10,11 +10,15 @@ section {
     place-items: center;
 }
 
+.card-header {
+    text-align: center;
+}
+
 .location-icon {
-    width: 75%;
+    width: 50%;
     margin-bottom: 20px;
 }
 
 .card {
-    margin: 0 auto;
+    height: 100%;
 }
