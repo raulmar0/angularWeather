@@ -22,3 +22,8 @@ section {
 .card {
     height: 100%;
 }
+
+/* won't work because .testing is not part of the locations component */
+.testing {
+    color: white;
+}

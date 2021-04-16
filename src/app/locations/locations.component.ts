@@ -34,16 +34,16 @@ export class LocationsComponent {
             "max": 3
         },
         {
-            "city": "Madrid",
-            "icon": "../assets/svg/002-rain.svg",
-            "min": 22,
-            "max": 24
+            "city": "Monterrey",
+            "icon": "../assets/svg/001-sun.svg",
+            "min": 27,
+            "max": 36
         },
         {
-            "city": "Lyon",
-            "icon": "../assets/svg/004-snowflake.svg",
-            "min": 0,
-            "max": 3
+            "city": "Dallas",
+            "icon": "../assets/svg/003-cloudy.svg",
+            "min": 20,
+            "max": 25
         },
     ]
 }

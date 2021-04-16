@@ -3,3 +3,8 @@ h1 {
     margin-bottom: 25px;
     text-align: center;
 }
+
+.testing {
+    color: white;
+    opacity: 0;
+}
