@@ -6,8 +6,8 @@ import { Directive, ElementRef, HostListener, DoCheck } from '@angular/core'
 
 export class RevealDirective implements DoCheck {
     card: any
-    cardReveal: any
     modal: any
+    isClicked: boolean
 
     constructor(private eleRef: ElementRef) {
         this.card = eleRef.nativeElement
@@ -19,15 +19,13 @@ export class RevealDirective implements DoCheck {
                 this.modal = node
             }
         }
-        console.log("modal: ", this.modal)
+        // console.log("modal: ", this.modal)
 
     }
 
     @HostListener('click') onClick() {
-        if (this.modal.style.opacity === 1) {
-            this.modal.style.opacity = 0
-        } else {
-            this.modal.style.opacity = 1
-        }
+        isClicked = isClicked ? false : true
+        console.log(this.isClicked)
+        // como pasar esta variable locations.component.ts
     }
 }

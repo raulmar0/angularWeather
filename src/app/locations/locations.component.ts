@@ -16,7 +16,7 @@ interface Locations {
 
 
 export class LocationsComponent {
-    
+
     locations: Locations[] = [
         {
             city: "Monterrey",
