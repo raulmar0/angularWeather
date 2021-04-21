@@ -4,7 +4,10 @@ h1 {
     text-align: center;
 }
 
-.testing {
-    color: white;
+.card {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%);
     opacity: 0;
 }
