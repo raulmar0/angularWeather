@@ -1,4 +1,4 @@
-import { Directive, ElementRef, OnInit } from '@angular/core'
+import { Directive, ElementRef, OnInit, HostListener } from '@angular/core'
 
 @Directive({
     selector: '[appReveal]'
@@ -14,6 +14,9 @@ export class RevealDirective {
         this.card.addEventListener('click', () => this.clickHandler())
     }
 
+    @HostListener('click') onClick() {
+        this.card.style.opacity = 1
+    }
 
     clickHandler() {
         console.log('click')
