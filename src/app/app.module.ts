@@ -13,7 +13,7 @@ import { RevealDirective } from './app-reveal.directive'
     LocationsComponent,
     HighlightDirective,
     AppNotDirective,
-    RevealDirective
+    RevealDirective,
   ],
   imports: [
     BrowserModule

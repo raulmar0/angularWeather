@@ -1,22 +1,33 @@
-import { Directive, ElementRef, EventEmitter, HostListener } from '@angular/core'
+import { Directive, ElementRef, HostListener, DoCheck } from '@angular/core'
 
 @Directive({
     selector: '[appReveal]'
 })
 
-export class RevealDirective {
+export class RevealDirective implements DoCheck {
     card: any
     cardReveal: any
-    close: any
+    modal: any
 
     constructor(private eleRef: ElementRef) {
-        console.log(eleRef.nativeElement)
         this.card = eleRef.nativeElement
-        this.cardReveal = document.getElementById('cardReveal')
+    }
+    
+    ngDoCheck () {
+        for (const node of this.card.childNodes) {
+            if (node.classList.contains('modal')) {
+                this.modal = node
+            }
+        }
+        console.log("modal: ", this.modal)
+
     }
 
     @HostListener('click') onClick() {
-        console.log(this.cardReveal)
-        this.cardReveal.style.opacity === 1 ? this.cardReveal.style.opacity = 0 : this.cardReveal.style.opacity = 1
+        if (this.modal.style.opacity === 1) {
+            this.modal.style.opacity = 0
+        } else {
+            this.modal.style.opacity = 1
+        }
     }
 }

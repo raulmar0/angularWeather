@@ -23,7 +23,15 @@ section {
     height: 100%;
 }
 
-/* won't work because .testing is not part of the locations component */
-.testing {
-    color: white;
+.modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0;
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
 }
