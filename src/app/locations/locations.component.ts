@@ -17,6 +17,12 @@ interface Locations {
 
 export class LocationsComponent {
 
+    message: boolean = false;
+
+    receiveMessage($event: boolean) {
+        this.message = $event
+    }
+
     locations: Locations[] = [
         {
             city: "Monterrey",

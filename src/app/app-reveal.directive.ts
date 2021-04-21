@@ -1,28 +1,17 @@
-import { Directive, ElementRef, HostListener, DoCheck, Output} from '@angular/core'
-import * as EventEmitter from 'node:events'
+import { Directive, ElementRef, HostListener, DoCheck, Output, EventEmitter} from '@angular/core'
 
 @Directive({
     selector: '[appReveal]'
 })
 
-export class RevealDirective implements DoCheck {
+export class RevealDirective {
     card: any
     modal: any
     isClicked: boolean = false
     
-    @Output() messageEvent = new EventEmitter<any>()
+    @Output() messageEvent = new EventEmitter<boolean>()
 
     constructor(private eleRef: ElementRef) {
-        this.card = eleRef.nativeElement
-    }
-    
-    ngDoCheck () {
-        for (const node of this.card.childNodes) {
-            if (node.classList.contains('modal')) {
-                this.modal = node
-            }
-        }
-        // console.log("modal: ", this.modal)
     }
 
     @HostListener('click') onClick() {
