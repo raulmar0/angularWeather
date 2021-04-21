@@ -11,3 +11,8 @@ h1 {
     transform: translateX(-50%);
     opacity: 0;
 }
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+}

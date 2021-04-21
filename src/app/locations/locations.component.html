@@ -1,6 +1,6 @@
 <section class="container"> 
     <div class="card-container" *ngFor='let loc of locations'>
-        <div class="card text-white bg-info mb-3" >
+        <div class="card text-white bg-info mb-3" appReveal >
             <div class="card-header"><strong>{{ loc.city }}</strong></div>
             <div class="card-body">
                 <img src="{{ loc.icon }}" alt="" class="location-icon">

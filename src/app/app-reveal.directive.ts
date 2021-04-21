@@ -1,4 +1,4 @@
-import { Directive, ElementRef, OnInit, HostListener } from '@angular/core'
+import { Directive, ElementRef, EventEmitter, HostListener } from '@angular/core'
 
 @Directive({
     selector: '[appReveal]'
@@ -6,20 +6,17 @@ import { Directive, ElementRef, OnInit, HostListener } from '@angular/core'
 
 export class RevealDirective {
     card: any
+    cardReveal: any
+    close: any
 
     constructor(private eleRef: ElementRef) {
         console.log(eleRef.nativeElement)
         this.card = eleRef.nativeElement
-        // console.log(document.getElementById('cardReveal'))
-        this.card.addEventListener('click', () => this.clickHandler())
+        this.cardReveal = document.getElementById('cardReveal')
     }
 
     @HostListener('click') onClick() {
-        this.card.style.opacity = 1
-    }
-
-    clickHandler() {
-        console.log('click')
-        this.card.style.opacity = 1
+        console.log(this.cardReveal)
+        this.cardReveal.style.opacity === 1 ? this.cardReveal.style.opacity = 0 : this.cardReveal.style.opacity = 1
     }
 }
