@@ -1,4 +1,4 @@
-import { Directive, ElementRef, HostListener, DoCheck } from '@angular/core'
+import { Directive, ElementRef, HostListener, DoCheck, TemplateRef, ViewContainerRef} from '@angular/core'
 
 @Directive({
     selector: '[appReveal]'
@@ -7,7 +7,9 @@ import { Directive, ElementRef, HostListener, DoCheck } from '@angular/core'
 export class RevealDirective implements DoCheck {
     card: any
     modal: any
-    isClicked: boolean
+    isClicked: boolean = false
+    templateRef: TemplateRef<any> | undefined
+    viewContainer: ViewContainerRef | undefined
 
     constructor(private eleRef: ElementRef) {
         this.card = eleRef.nativeElement
@@ -24,8 +26,8 @@ export class RevealDirective implements DoCheck {
     }
 
     @HostListener('click') onClick() {
-        isClicked = isClicked ? false : true
-        console.log(this.isClicked)
+        this.isClicked = this.isClicked ? false : true
+        console.log(this.templateRef)
         // como pasar esta variable locations.component.ts
     }
 }
