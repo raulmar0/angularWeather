@@ -1,4 +1,5 @@
-import { Directive, ElementRef, HostListener, DoCheck, TemplateRef, ViewContainerRef} from '@angular/core'
+import { Directive, ElementRef, HostListener, DoCheck, Output} from '@angular/core'
+import * as EventEmitter from 'node:events'
 
 @Directive({
     selector: '[appReveal]'
@@ -8,8 +9,8 @@ export class RevealDirective implements DoCheck {
     card: any
     modal: any
     isClicked: boolean = false
-    templateRef: TemplateRef<any> | undefined
-    viewContainer: ViewContainerRef | undefined
+    
+    @Output() messageEvent = new EventEmitter<any>()
 
     constructor(private eleRef: ElementRef) {
         this.card = eleRef.nativeElement
@@ -22,12 +23,15 @@ export class RevealDirective implements DoCheck {
             }
         }
         // console.log("modal: ", this.modal)
-
     }
 
     @HostListener('click') onClick() {
         this.isClicked = this.isClicked ? false : true
-        console.log(this.templateRef)
-        // como pasar esta variable locations.component.ts
+        this.sendMessage()
+    }
+
+
+    sendMessage() {
+        this.messageEvent.emit(this.isClicked)
     }
 }
