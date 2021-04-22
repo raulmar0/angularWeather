@@ -23,13 +23,18 @@ section {
     height: 100%;
 }
 
-.modal {
-    position: fixed;
-    top: 50%;
-    left: 50%;
+.show {
+    position: absolute;
+    width: minmax();
+    height: 300px;
+    /* top: 50%;
+    left: 50%; */
     transform: translateX(-50%);
-    opacity: 0;
+    transform: translateY(-50%);
+    z-index: 1;
 }
+
+
 
 .modal-header {
     display: flex;

@@ -1,4 +1,4 @@
-import { Directive, ElementRef, HostListener, DoCheck, Output, EventEmitter} from '@angular/core'
+import { Directive, ElementRef, HostListener, Output, EventEmitter} from '@angular/core'
 
 @Directive({
     selector: '[appReveal]'
