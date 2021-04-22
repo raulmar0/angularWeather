@@ -41,3 +41,8 @@ section {
     display: flex;
     justify-content: space-between;
 }
+
+.modal-header div:last-child {
+    text-decoration: underline;
+    cursor: pointer;
+}
