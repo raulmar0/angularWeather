@@ -15,7 +15,8 @@ export class RevealDirective {
     }
 
     @HostListener('click') onClick() {
-        this.isClicked = this.isClicked ? false : true
+        this.isClicked = true
+        // this.isClicked = this.isClicked ? false : true
         this.sendMessage()
     }
 

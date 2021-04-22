@@ -1,5 +1,5 @@
 // import { Location } from "@angular/common";
-import { Component } from "@angular/core";
+import { Component, HostListener, ElementRef } from "@angular/core";
 
 interface Locations {
     city: string;
@@ -19,8 +19,19 @@ export class LocationsComponent {
 
     message: boolean = false;
 
+    constructor(private eleRef: ElementRef) {
+    }
+    
+    @HostListener('click') onClick() {
+        console.log(this.eleRef.nativeElement.childNodes)
+    }
+
     receiveMessage($event: boolean) {
         this.message = $event
+    }
+
+    closeBtn() {
+        this.message = false
     }
 
     locations: Locations[] = [

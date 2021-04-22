@@ -1,7 +1,7 @@
 <section class="container"> 
     <div class="card-container" *ngFor='let loc of locations'>
         <div class="card text-white bg-info mb-3" (messageEvent)="receiveMessage($event)" appReveal >
-            <div class="card-header"><strong>{{ loc.city }} {{ message }}</strong></div>
+            <div class="card-header"><strong>{{ loc.city }}</strong></div>
             <div class="card-body">
                 <img src="{{ loc.icon }}" alt="" class="location-icon">
                 <p class="card-text"><strong>Min:</strong> {{ loc.min }}°C</p>
@@ -11,7 +11,7 @@
         <div class="card show" *ngIf='message'>
             <div class="card-header modal-header">
                 <div>{{loc.city}}</div>
-                <div id="Close">Close</div>
+                <div (click)="closeBtn()">Close</div>
             </div>
             <div class="card-body">
                 <h5 class="card-title">Special title treatment</h5>
